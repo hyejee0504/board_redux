@@ -22,8 +22,8 @@ export default function MainPage() {
 
   useEffect(() => {
     const getLists = async () => {
-      const res = await axios.get("https://192.168.2.151:8080/v2/device/?size=100", {});
-      setItem(res.data.data.filter((item: { type: string }) => item.type === "IED"));
+      const res = await axios.get(`http://192.168.2.151/v2/device?size=100&types=IED`, {});
+      setItem(res.data.data);
     };
     getLists();
   }, []);

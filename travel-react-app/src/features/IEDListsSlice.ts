@@ -16,11 +16,19 @@ interface informationProps {
   portAmount ?: number;
 }
 
+const checkedItems = [];
+
+const initialState = {
+  information: [],
+};
+
 
 /* 액션 생성함수 선언 */
-export const getIED = (information: informationProps) => ({
+export const getIED = (information: informationProps[]) => ({
   type: GET_IED,
-  information
+  IEDlists: {
+    information
+  }
 });
 
 export const addIED = (information: informationProps)  => ({
@@ -44,20 +52,12 @@ export const deldteIED = (information: informationProps) => ({
   }
 });
 
-// export const toggleTodo = id => ({
-//   type: TOGGLE_TODO,
-//   id
-// });
-
-/* 초기 상태 선언 */
-// 리듀서의 초기 상태는 꼭 객체타입일 필요 없습니다.
-// 배열이여도 되고, 원시 타입 (숫자, 문자열, 불리언 이여도 상관 없습니다.
-const initialState: never[] = [];
-
 export default function IEDListsReducer(state = initialState, action: { type: any; IEDlists: ConcatArray<never>; }) {
   switch (action.type) {
+    case GET_IED:
+      return { informagion : action.IEDlists }
     case ADD_IED:
-      return state.concat(action.IEDlists);
+      return state.information.concat(action.IEDlists);
     // case EDIT_IED:
       // return state.map(
       //   IEDlist =>
