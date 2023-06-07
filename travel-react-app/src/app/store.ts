@@ -4,7 +4,7 @@ import IEDListsReducer from '../features/IEDListsSlice';
 
 export const store = configureStore({
   reducer: {
-    IEDlists: IEDListsReducer,
+    // IEDlists: IEDListsReducer,
 
   },
 });
