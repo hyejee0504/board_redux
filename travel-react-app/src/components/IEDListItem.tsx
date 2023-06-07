@@ -5,23 +5,22 @@ interface informationProps {
     CIDFile: string;
     IEDName: string;
     deviceName : string;
-    SNTPCycle : number;
+    SNTPCycle ?: number;
     IPAddress: string;
-    portAmount : number;
+    portAmount ?: number;
   }
 
 export default function IEDListItem({id, CIDFile, IEDName, deviceName, SNTPCycle, IPAddress, portAmount}:informationProps) {
+  
   return (
     <li>
-        <input type='checkbox' />
+        <input type='checkbox'/>
         {CIDFile}
         {IEDName}
         {deviceName}
         {SNTPCycle}
         {IPAddress}
         {portAmount}
-
-
     </li>
   )
 }
